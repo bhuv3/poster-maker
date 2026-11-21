@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Poster Maker</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<header class="topbar">
+  <div class="brand"><span class="brand-mark" aria-hidden="true"></span><span class="brand-name">Poster maker</span></div>
+  <div class="spacer"></div>
+  <button id="btnMutate" class="ghost" data-icon="mutate" title="Pick from 9 variations (M)">Mutate</button>
+  <button id="btnGallery" class="ghost" data-icon="gallery" title="Gallery (G)">Gallery</button>
+  <button id="btnSave" class="ghost" data-icon="bookmark" title="Save to gallery (S)">Save</button>
+  <button id="btnShare" class="ghost" data-icon="link" title="Copy a link to this poster">Share</button>
+  <div class="menu-wrap">
+    <button id="btnExport" class="primary" data-icon="download" aria-haspopup="menu" aria-expanded="false">Export</button>
+    <div class="menu" id="exportMenu" role="menu" hidden>
+      <button role="menuitem" data-export="svg"><span class="mi">SVG (vector, for print)</span><kbd>Ctrl E</kbd></button>
+      <button role="menuitem" data-export="png150"><span class="mi">PNG · 150 DPI</span></button>
+      <button role="menuitem" data-export="png300"><span class="mi">PNG · 300 DPI</span></button>
+      <div class="menu-sep"></div>
+      <button role="menuitem" data-export="layers"><span class="mi">Ink layers (one SVG per color)</span></button>
+      <button role="menuitem" data-export="plotter"><span class="mi">Pen plotter SVG</span></button>
+      <button role="menuitem" data-export="video"><span class="mi">Video loop (WebM)</span></button>
+    </div>
+  </div>
+  <button id="btnFocus" class="icon-btn" data-icon="maximize" title="Focus: hide the panels (F)" aria-label="Focus"></button>
+  <button id="btnHelp" class="icon-btn" data-icon="keyboard" title="Keyboard shortcuts (?)" aria-label="Keyboard shortcuts"></button>
+</header>
+
+<div class="workspace">
+  <nav class="rail" id="rail" aria-label="Styles"></nav>
+  <main class="stage" id="stage">
+    <div class="paper" id="paper"></div>
+    <div class="float seed-bar" id="seedBar"></div>
+    <div class="drawing">Drawing…</div>
+    <div class="render-time" id="renderTime"></div>
+  </main>
+  <aside class="panel" id="panel" aria-label="Settings"></aside>
+</div>
+
+<div class="overlay" id="overlay" hidden></div>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+<input type="file" id="imageInput" accept="image/*" hidden>
+<input type="file" id="fileInput" hidden>
+
+<script src="js/core/random.js"></script>
+<script src="js/core/noise.js"></script>
+<script src="js/core/geom.js"></script>
+<script src="js/core/sampling.js"></script>
+<script src="js/model/pages.js"></script>
+<script src="js/model/palettes.js"></script>
+<script src="js/model/poster.js"></script>
+<script src="js/model/history.js"></script>
+<script src="js/render/shapes.js"></script>
+<script src="js/render/fonts.js"></script>
+<script src="js/render/textlayer.js"></script>
+<script src="js/render/svg.js"></script>
+<script src="js/render/contrast.js"></script>
+<script src="js/render/riso.js"></script>
+<script src="js/render/plotter.js"></script>
+<script src="js/render/compose.js"></script>
+<script src="js/styles/registry.js"></script>
+<script src="js/styles/swiss.js"></script>
+<script src="js/styles/flowfield.js"></script>
+<script src="js/styles/oplines.js"></script>
+<script src="js/styles/topo.js"></script>
+<script src="js/styles/packing.js"></script>
+<script src="js/styles/truchet.js"></script>
+<script src="js/styles/typo.js"></script>
+<script src="js/styles/ridges.js"></script>
+<script src="js/styles/halftone.js"></script>
+<script src="js/styles/sunburst.js"></script>
+<script src="js/styles/rainbows.js"></script>
+<script src="js/styles/blobs.js"></script>
+<script src="js/styles/lowpoly.js"></script>
+<script src="js/styles/memphis.js"></script>
+<script src="js/styles/harmonograph.js"></script>
+<script src="js/styles/route.js"></script>
+<script src="js/ui/prefs.js"></script>
+<script src="js/ui/icons.js"></script>
+<script src="js/ui/dialogs.js"></script>
+<script src="js/ui/controls.js"></script>
+<script src="js/ui/stage.js"></script>
+<script src="js/ui/panel.js"></script>
+<script src="js/ui/rail.js"></script>
+<script src="js/ui/bar.js"></script>
+<script src="js/ui/exporter.js"></script>
+<script src="js/ui/gallery.js"></script>
+<script src="js/ui/mutate.js"></script>
+<script src="js/ui/animator.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
